@@ -1,0 +1,6 @@
+name: PluginWatcher
+main: com.jaoafa.PluginWatcher.Main
+version: 0.0.1
+description: Plugin disabled watcher
+author: mine_book000
+database: true
