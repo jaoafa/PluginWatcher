@@ -79,15 +79,9 @@
 			<version>1.12.2-R0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>net.dv8tion</groupId>
-			<artifactId>JDA</artifactId>
-			<version>3.8.3_463</version>
-			<exclusions>
-				<exclusion>
-					<groupId>club.minnced</groupId>
-					<artifactId>opus-java</artifactId>
-				</exclusion>
-			</exclusions>
+			<groupId>club.minnced</groupId>
+			<artifactId>discord-webhooks</artifactId>
+			<version>0.3.1</version>
 		</dependency>
 	</dependencies>
 	<url>http://jaoafa.com/</url>

@@ -11,10 +11,10 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import com.jaoafa.PluginWatcher.Main;
 
-import net.dv8tion.jda.webhook.WebhookClient;
-import net.dv8tion.jda.webhook.WebhookClientBuilder;
-import net.dv8tion.jda.webhook.WebhookMessage;
-import net.dv8tion.jda.webhook.WebhookMessageBuilder;
+import club.minnced.discord.webhook.WebhookClient;
+import club.minnced.discord.webhook.WebhookClientBuilder;
+import club.minnced.discord.webhook.send.WebhookMessage;
+import club.minnced.discord.webhook.send.WebhookMessageBuilder;
 
 public class Task_Watcher extends BukkitRunnable {
 	@Override
