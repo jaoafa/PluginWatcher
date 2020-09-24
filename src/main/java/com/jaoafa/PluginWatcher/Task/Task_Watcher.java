@@ -1,20 +1,18 @@
 package com.jaoafa.PluginWatcher.Task;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import club.minnced.discord.webhook.WebhookClient;
+import club.minnced.discord.webhook.WebhookClientBuilder;
+import club.minnced.discord.webhook.send.WebhookMessage;
+import club.minnced.discord.webhook.send.WebhookMessageBuilder;
+import com.jaoafa.PluginWatcher.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import com.jaoafa.PluginWatcher.Main;
-
-import club.minnced.discord.webhook.WebhookClient;
-import club.minnced.discord.webhook.WebhookClientBuilder;
-import club.minnced.discord.webhook.send.WebhookMessage;
-import club.minnced.discord.webhook.send.WebhookMessageBuilder;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Task_Watcher extends BukkitRunnable {
 	@Override
@@ -40,9 +38,12 @@ public class Task_Watcher extends BukkitRunnable {
 			}
 			System.out.println("[PluginWatcher] Enabled: " + enabledCount + " / Disabled: " + disabledCount);
 			System.out.println("[PluginWatcher] Disabled Plugins: " + String.join(", ", disabledPlugins));
+			Main.pluginDisabled = true;
 
 			sendMessage("<@221991565567066112> __**[PluginWatcher]**__ プラグインの一部が停止中: "
 					+ String.join(", ", disabledPlugins));
+		} else if (Main.pluginDisabled) {
+			Main.pluginDisabled = false;
 		}
 	}
 
