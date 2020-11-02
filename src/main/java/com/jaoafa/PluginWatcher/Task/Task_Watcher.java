@@ -12,6 +12,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class Task_Watcher extends BukkitRunnable {
@@ -38,10 +39,13 @@ public class Task_Watcher extends BukkitRunnable {
 			}
 			System.out.println("[PluginWatcher] Enabled: " + enabledCount + " / Disabled: " + disabledCount);
 			System.out.println("[PluginWatcher] Disabled Plugins: " + String.join(", ", disabledPlugins));
-			Main.pluginDisabled = true;
 
-			sendMessage("<@221991565567066112> __**[PluginWatcher]**__ プラグインの一部が停止中: "
-					+ String.join(", ", disabledPlugins));
+			if (!Main.pluginDisabled || Calendar.getInstance().get(Calendar.MINUTE) <= 10) {
+				sendMessage("<@221991565567066112> __**[PluginWatcher]**__ プラグインの一部が停止中: "
+						+ String.join(", ", disabledPlugins));
+			}
+
+			Main.pluginDisabled = true;
 		} else if (Main.pluginDisabled) {
 			Main.pluginDisabled = false;
 		}
